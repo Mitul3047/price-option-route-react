@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Links from "../Links/Links";
-import { RiMenu2Fill } from 'react-icons/Ri';
+import { RiMenu2Fill , RiCloseLine} from 'react-icons/Ri';
 
 const Navbar = () => {
+ const [open, setOpen] = useState(false)
 
     const routes = [
         { id: 1, name: "Home", path: "/" },
@@ -13,8 +15,14 @@ const Navbar = () => {
 
     return (
         <nav>
-            <RiMenu2Fill></RiMenu2Fill>
-        <ul className="flex gap-8 p-8 ">
+            <div onClick={() => setOpen(!open)} className="md:hidden p-6 text-black bg-yellow-300 ">
+                {
+                    open === true ? <RiCloseLine/>: <RiMenu2Fill/>
+                }
+            {/* <RiMenu2Fill></RiMenu2Fill> */}
+            </div>
+            
+        <ul className={`md:flex md:static absolute bg-yellow-300 text-black p-6 gap-8 duration-1000  ${open ? 'top-16': '-top-60'}`}>
             {
                 routes.map(route => (
                     <Links key={route.id} route={route}></Links>
