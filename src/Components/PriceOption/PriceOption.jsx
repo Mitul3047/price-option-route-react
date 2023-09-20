@@ -3,25 +3,25 @@ import Features from '../Features/Features';
 
 const PriceOption = ({gymMembershipOption}) => {
     return (
-        <div>
-            <div className="card  bg-base-100 shadow-xl">
+        <div className=''> 
+            <div className="card  shadow-xl hover:bg-yellow-300  bg-yellow-200">
   <div className="card-body">
-    <h2 className='text-2xl'>{gymMembershipOption.name}</h2>
+    <h2 className='text-2xl font-bold'>{gymMembershipOption.name}</h2>
     <p>{gymMembershipOption.description}</p>
-    <p>Monthly Fee: ${gymMembershipOption.price}</p>
-    <div>
+    <p className='text-center font-semibold'><span className='text-5xl '>${gymMembershipOption.price}</span>/Month</p>
+    <div >
         {
-            gymMembershipOption.features.map(feature => (
+            gymMembershipOption.features.map((feature,idx) => (
                 // console.log(feature)
-           <div key={feature.idx}>
+           <div key={idx}>
             <Features feature={feature}></Features>
            </div>
            
                 ))
         }
     </div>
-    <div className="card-actions justify-center">
-      <button className="btn btn-accent">Buy Now</button>
+    <div className="card-actions ">
+      <button className="btn bg-blue-500  text w-full">Buy Now</button>
     </div>
   </div>
 </div>

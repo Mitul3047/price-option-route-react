@@ -1,9 +1,9 @@
-
+import { AiFillCheckCircle } from 'react-icons/Ai';
 
 const Features = ({feature}) => {
     return (
-        <div>
-            <p>{feature}</p>
+        <div className='text-left'>
+            <p><AiFillCheckCircle className='inline-block text-green-500'/> {feature}</p>
         </div>
     );
 };

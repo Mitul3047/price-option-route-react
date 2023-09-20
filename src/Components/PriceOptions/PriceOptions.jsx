@@ -61,9 +61,9 @@ const PriceOptions = () => {
 
 
     return (
-        <div>
-            <h2 className="text-5xl text-center">Best Price in the town</h2>
-           <div className="grid grid-cols-4 gap-4 text-center">
+        <div className="">
+            <h2 className="text-5xl text-center my-6">Best Price in the town</h2>
+           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 w-2/3 f mx-auto md:w-full md:px-7  ">
            {
                 gymMembershipOptions.map(gymMembershipOption =>(
                     //  (console.log(gymMembershipOption)
